@@ -4,9 +4,9 @@ summary: Upload an app to Qyrus and run tests.
 description: |
   This step uploads a provided app apk/ipa to Qyrus. It then will execute the tests for the provided apks/ipas in Qyrus. 
   Qyrus is a end to end testing platform designed to test Web, Mobile and APIs for all digital enterprises. With its codeless approach to testing Web, Mobile & APIs, Qyrus is the fastest way to start the journey of automated testing for your enterprise.
-website: https://github.com/QQyrus/bitrise-step-qyrus-mobility-test-runner-android
-source_code_url: https://github.com/QQyrus/bitrise-step-qyrus-mobility-test-runner-android
-support_url: https://github.com/QQyrus/bitrise-step-qyrus-mobility-test-runner-android/issues
+website: https://github.com/qyrusai/bitrise-step-qyrus-component-test-runner-android
+source_code_url: https://github.com/qyrusai/bitrise-step-qyrus-component-test-runner-android
+support_url: https://github.com/qyrusai/bitrise-step-qyrus-component-test-runner-android/issues
 host_os_tags:
   - osx-10.10
   - ubuntu-16.04
@@ -97,12 +97,69 @@ inputs:
       description: |
         Project name you can find by logging into Qyrus app. Copy the team name and paste it.
       is_required: true
-  - qyrus_suite_name:
+  - qyrus_test_name:
     opts:
-      title: "Qyrus Suite Name"
+      title: "Qyrus Test Name"
       summary: Enter the project name
       description: |
-        Suite name you can find by logging into Qyrus app. Copy the team name and paste it.
+        Test name you can find by logging into Qyrus app. Copy the team name and paste it.
+      is_required: true
+  - environment_name:
+    opts:
+      title: "Environment Name"
+      summary: Enter the Environment Name
+      description: |
+        Select Your Environment Name.
+      is_required: true
+  - component_web:
+    opts:
+      title: "Componenet Web"
+      summary: Enter the Componenet project name
+      description: |
+        Project name you can find by logging into Qyrus app.
+      is_required: true
+      value_options:
+        - "yes"
+        - "no"
+  - component_mobility:
+    opts:
+      title: "Component Mobility"
+      summary: Enter the Componenet project name
+      description: |
+        Test name you can find by logging into Qyrus app.
+      is_required: true
+      value_options:
+        - "yes"
+        - "no"
+  - browser_name:
+    opts:
+      title: "Browser"
+      summary: Enter the browser
+      description: |
+        Select Your Browser.
+      is_required: true 
+      value_options:
+        - "chrome"
+        - "safari"
+        - "MicrosoftEdge"
+        - "opera"
+        - "firefox"
+  - operating_system:
+    opts:
+      title: "OperatingSystem"
+      summary: Enter the operatingSystem
+      description: |
+        Select Your operatingSystem.
+      is_required: true 
+      value_options:
+        - "Windows"
+        - "Linux"
+  - email_id:
+    opts:
+      title: "emailId"
+      summary: Enter the EmailId
+      description: |
+        Enter Your EmailId.
       is_required: true
   - app_activity:
     opts:
@@ -127,13 +184,14 @@ inputs:
         a device pool will have list of devices added and a test
         run will happen on a device from the pool.
       is_required: true
-  - email_id:
+  - device_name:
     opts:
-      title: "emailId"
-      summary: Enter the EmailId
+      title: "Device"
+      summary: Enter the Device
       description: |
-        Enter Your EmailId To Send Your Test Reports.
-      is_required: true    
+        Select Your Device.
+      is_required: true 
+     
 outputs:
   - QYRUS_TEST_REPORT_URL: null
     opts:

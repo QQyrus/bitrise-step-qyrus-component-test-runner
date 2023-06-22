@@ -4,9 +4,9 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 app:
   envs:
   # If you want to share this step into a StepLib
-  - BITRISE_STEP_ID: qyrus-mobility-test-runner-android
+  - BITRISE_STEP_ID: qyrus-component-test-runner-android
   - BITRISE_STEP_VERSION: "0.0.3"
-  - BITRISE_STEP_GIT_CLONE_URL: https://github.com/QQyrus/qyrus-mobility-test-runner-android.git
+  - BITRISE_STEP_GIT_CLONE_URL: https://github.com/QQyrus/qyrus-component-test-runner-android.git
   - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/QQyrus/bitrise-steplib.git
   
 workflows:
@@ -39,13 +39,19 @@ workflows:
         - qyrus_password: $QYRUS_PASSWORD
         - qyrus_team_name: $QYRUS_TEAM_NAME
         - qyrus_project_name: $QYRUS_PROJECT_NAME
-        - qyrus_suite_name: $QYRUS_SUITE_NAME
+        - qyrus_test_name: $QYRUS_TEST_NAME
+        - environment_name: $ENVIRONMENT_NAME
+        - component_web: $COMPONENT_WEB
+        - component_mobility: $COMPONENT_MOBILITY
+        - enable_debug: $DEBUG_MODE
+        - browser_name: $BROWSER_NAME
+        - operating_system: $OPERATING_SYSTEM
+        - email_id: $EMAIL_ID
         - app_activity: $APP_ACTIVITY
         - bundle_id: $BUNDLE_ID
         - device_pool_name: $DEVICE_POOL_NAME
         - upload_app: $UPLOAD_APP
-        - enable_debug: $DEBUG_MODE
-        - email: $EMAIL_ID
+        - device_name: $DEVICE_NAME
 
     - script:
         inputs:
