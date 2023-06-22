@@ -49,6 +49,10 @@ if ( bundle_id == null ) {
     bundle_id = '';
 }
 
+if ( environment_name == null ) {
+    environment_name = 'Global';
+}
+
 if ( enable_debug == 'yes' ) {
     console.log('******* QYRUS Cloud - INPUT PARAMETERS *******');
     console.log('App Path :',appPath);

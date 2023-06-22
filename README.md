@@ -1,12 +1,13 @@
 # bitrise-step-qyrus-component-test-runner
 
-This step uploads the apk or ipa to Qyrus cloud test platform and runs the test on a real devices.
+This steps help to run tests on web automation service Qyrus platform.
 
 ## Limitations
 
-You can run only the test suites but not the test scripts
-
-If you need to increase the upload limit on the number of apps please contact support@qyrus.com
+* You can run only the test suites but not the test scripts, Also user will not be able to choose
+the browser versions.
+* The hard limit set to upload mobile apps on component is 2, if you want a raise in the limit,
+please write to support@qyrus.com.
 
 ## How to use this Step
 
@@ -15,13 +16,13 @@ Add the *qyrus-component-test-runner* step into your worflow.
 Initialize inputs variables from the bitrise form.
 
 * Qyrus gateway URL `$GATEWAY_URL` **required**
+* Qyrus Username `$QYRUS_USERNAME` **required**
+* Qyrus Team Name `$QYRUS_TEAM_NAME` **required**
+* Qyrus Project Name `$QYRUS_PROJECT_NAME` **required**
 
 **Note:** 
-* Its necessary to specify bundle id if the device OS is iOS and app activity if your device OS is android.
-* If you are not uploading apk/ipa then, you have to specify the app name which you had already uploaded to Qyrus.
-* please set the $QYRUS_PASSWORD under secrets.
-
-Prints additional debug information in logs if this option is enabled
+* Please set the $QYRUS_PASSWORD under secrets.
+* Please set the $DEBUG_MODE to yes (Prints additional debug information in logs if this option is enabled).
 
 ## Support
 Please write us at support@qyrus.com

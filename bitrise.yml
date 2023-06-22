@@ -4,9 +4,9 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 app:
   envs:
   # If you want to share this step into a StepLib
-  - BITRISE_STEP_ID: qyrus-component-test-runner-android
-  - BITRISE_STEP_VERSION: "0.0.3"
-  - BITRISE_STEP_GIT_CLONE_URL: https://github.com/QQyrus/qyrus-component-test-runner-android.git
+  - BITRISE_STEP_ID: qyrus-component-test-runner
+  - BITRISE_STEP_VERSION: "0.0.1"
+  - BITRISE_STEP_GIT_CLONE_URL: https://github.com/QQyrus/qyrus-component-test-runner.git
   - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/QQyrus/bitrise-steplib.git
   
 workflows:
@@ -26,10 +26,10 @@ workflows:
         - path: ./_tmp
         - is_create_path: true
     - path::./:
-        title: Trigger Mobility Run On Qyrus
+        title: Trigger Component Run On Qyrus
         description: |-
           Uploads an APK/IPA file to Qyrus Cloud, triggers test run on
-          real device. To test this you will need valid Qyrus username
+          real device and browsers. To test this you will need valid Qyrus username
           and password. else, you could ask support@qyrus.com.
         run_if: true
         inputs:
